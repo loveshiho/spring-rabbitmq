@@ -1,0 +1,13 @@
+spring:
+  rabbitmq:
+    host: 172.16.121.130
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    listener:   # 消费者操作
+      simple:
+        acknowledge-mode: manual
+        prefetch: 10
+    publisher-confirm-type: correlated  # 生产者操作
+    publisher-returns: true  # 开启Return机制
